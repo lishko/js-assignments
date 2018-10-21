@@ -23,7 +23,6 @@
  */
 function getRectangleArea(width, height) {
     return width * height;
-//    throw new Error('Not implemented');
 }
 
 
@@ -40,7 +39,6 @@ function getRectangleArea(width, height) {
  */
 function getCicleCircumference(radius) {
     return 2 * Math.PI * radius;
-//    throw new Error('Not implemented');
 }
 
 /**
@@ -92,7 +90,6 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  */
 function getLinearEquationRoot(a, b) {
     return -b / a;
-//    throw new Error('Not implemented');
 }
 
 
@@ -185,7 +182,6 @@ function getParallelipidedDiagonal(a,b,c) {
  */
 function roundToPowerOfTen(num, pow) {
     return Math.round(num / Math.pow(10,pow)) * Math.pow(10,pow);
-//    throw new Error('Not implemented');
 }
 
 /**
@@ -209,7 +205,6 @@ function isPrime(n) {
     for(var i = 2; i < n; i++)
         if(n % i === 0) return false;
     return n !== 1 && n !== 0;
-//    throw new Error('Not implemented');
 }
 
 /**
