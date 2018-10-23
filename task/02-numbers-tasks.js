@@ -225,7 +225,7 @@ function isPrime(n) {
 function toNumber(value, def) {
     var a = Number.parseInt(value);
     if (Number.isFinite(a))    
-    return a;
+        return a;
     else return def;
 }
 

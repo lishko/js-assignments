@@ -202,13 +202,9 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-//    var x = "─".charCodeAt(0);
-    var c = String.fromCharCode(39) + String.fromCharCode(9484) + String.fromCharCode(9472).repeat(width-2) + String.fromCharCode(9488) + String.fromCharCode(92,110) + String.fromCharCode(39) + String.fromCharCode(43) + String.fromCharCode(10) +
-        (String.fromCharCode(39) + String.fromCharCode(9474) + String.fromCharCode(32).repeat(width-2) + String.fromCharCode(9474) + String.fromCharCode(92,110) + String.fromCharCode(39) + String.fromCharCode(43) + String.fromCharCode(10)).repeat(height-2) +
-        String.fromCharCode(39) + String.fromCharCode(9492) + String.fromCharCode(9472).repeat(width-2) + String.fromCharCode(9496) + String.fromCharCode(92,110) + String.fromCharCode(39);
-//    console.log(c);
-//    return c;
-     throw new Error('Not implemented');
+    return String.fromCharCode(9484) + String.fromCharCode(9472).repeat(width-2) + String.fromCharCode(9488) + String.fromCharCode(10) +
+        (String.fromCharCode(9474) + String.fromCharCode(32).repeat(width-2) + String.fromCharCode(9474) + String.fromCharCode(10)).repeat(height-2) +
+        String.fromCharCode(9492) + String.fromCharCode(9472).repeat(width-2) + String.fromCharCode(9496) + String.fromCharCode(10);
 }
 
 
@@ -249,7 +245,7 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-    return Object.prototype.toString.call(value) === "[object String]"
+    return Object.prototype.toString.call(value) === "[object String]";
 }
 
 
@@ -278,7 +274,7 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-    throw new Error('Not implemented');
+    return '♣♦♥♠'.indexOf(value.slice(-1)) * 13 + 'A234567891JQK'.indexOf(value.slice(0,1));
 }
 
 
