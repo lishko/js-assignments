@@ -293,7 +293,7 @@ function propagateItemsByPositionIndex(arr) {
  */
 function get3TopItems(arr) {
     return arr.sort((a, b) => b - a)
-        .slice(0, 3);
+            .slice(0, 3);
 }
 
 
@@ -483,7 +483,6 @@ function sortCitiesArray(arr) {
  *           [0,0,0,0,1]]   
  */
 function getIdentityMatrix(n) {
-// I have to investigate the algorithm !!!
     return Array(n).fill(0).map(function (elem, i) {
         return Array(n).fill(0).map(function (elem2, j) {
             return 1 - Math.min(Math.abs(i - j), 1);
@@ -505,7 +504,7 @@ function getIdentityMatrix(n) {
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(start, end) {
-    throw new Error('Not implemented');
+    return Array(end - start + 1).fill().map((_, idx) => start + idx)
 }
 
 /**
@@ -520,7 +519,7 @@ function getIntervalArray(start, end) {
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
 function distinct(arr) {
-    throw new Error('Not implemented');
+    return arr.filter((v, i, a) => a.indexOf(v) === i);
 }
 
 /**
