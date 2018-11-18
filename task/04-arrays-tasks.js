@@ -293,7 +293,7 @@ function propagateItemsByPositionIndex(arr) {
  */
 function get3TopItems(arr) {
     return arr.sort((a, b) => b - a)
-            .slice(0, 3);
+        .slice(0, 3);
 }
 
 
@@ -569,7 +569,7 @@ function group(array, keySelector, valueSelector) {
  *   ['one','two','three'], x=>x.split('')  =>   ['o','n','e','t','w','o','t','h','r','e','e']
  */
 function selectMany(arr, childrenSelector) {
-    throw new Error('Not implemented');
+    return [].concat(...arr.map(childrenSelector));
 }
 
 
@@ -586,7 +586,9 @@ function selectMany(arr, childrenSelector) {
  *   [[[ 1, 2, 3]]], [ 0, 0, 1 ]      => 2        (arr[0][0][1])
  */
 function getElementByIndexes(arr, indexes) {
-    throw new Error('Not implemented');
+    return indexes.reduce((newArr, indexValue) => {
+        return newArr[indexValue]
+    }, arr);
 }
 
 
@@ -609,7 +611,17 @@ function getElementByIndexes(arr, indexes) {
  * 
  */
 function swapHeadAndTail(arr) {
-    throw new Error('Not implemented');
+    if (arr.length === 1 || arr.length === 0) {
+        return arr;
+    }
+
+    var head = arr.slice(0, arr.length / 2);
+    var tail = arr.slice(Math.ceil(arr.length / 2));
+    if (arr.length % 2 === 0) {
+        return tail.concat(head);
+    } else {
+        return tail.concat(arr[Math.floor(arr.length / 2)], head);
+    }
 }
 
 
